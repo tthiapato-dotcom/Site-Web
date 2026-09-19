@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> THIAPATO THIOYE | Data Analyste </title>
+
+    <meta name="description"
+          content="Portfolio de Thiapato Thioye, étudiante en Sciences des Données à la recherche d'une alternance.">
+
+    <style>
+
+        /* =========================
+           VARIABLES
+        ========================= */
+
+        :root {
+            --bg: #f7f9fc;
+            --white: #ffffff;
+            --dark: #172033;
+            --text: #4b5563;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --light-blue: #eff6ff;
+            --border: #e5e7eb;
+            --shadow: 0 15px 40px rgba(23, 32, 51, 0.08);
+            --radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+            height: 70px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 120px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at top right, #dbeafe 0%, transparent 35%),
+                radial-gradient(circle at bottom left, #ede9fe 0%, transparent 30%),
+                var(--bg);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .hero-text {
+            animation: fadeUp 1s ease;
+        }
+
+        .hello {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            color: var(--dark);
+            margin-bottom: 20px;
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero h2 {
+            font-size: 1.7rem;
+            color: #374151;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid #bfdbfe;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* =========================
+           PHOTO
+        ========================= */
+
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-frame {
+            width: 330px;
+            height: 390px;
+            border-radius: 30px;
+
+            background: linear-gradient(
+                145deg,
+                #2563eb,
+                #7c3aed
+            );
+
+            padding: 8px;
+            box-shadow: 0 25px 60px rgba(37, 99, 235, 0.25);
+
+            transform: rotate(3deg);
+            transition: 0.4s;
+        }
+
+        .photo-frame:hover {
+            transform: rotate(0deg) translateY(-8px);
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 24px;
+
+            background: #e5e7eb;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title small {
+            color: var(--primary);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 2.6rem;
+            color: var(--dark);
+            margin-top: 8px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .profile-highlight {
+            background: linear-gradient(
+                135deg,
+                #eff6ff,
+                #f5f3ff
+            );
+        }
+
+        .highlight-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: var(--light-blue);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #dbeafe;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 65px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 8px;
+            top: 5px;
+
+            width: 27px;
+            height: 27px;
+
+            background: var(--primary);
+            border: 5px solid white;
+            border-radius: 50%;
+
+            box-shadow: 0 0 0 3px #bfdbfe;
+        }
+
+        .timeline-card {
+            background: white;
+            padding: 28px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .date {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .timeline-card h3 {
+            color: var(--dark);
+            font-size: 1.3rem;
+        }
+
+        .company {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           FORMATION
+        ========================= */
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .education-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .education-year {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .education-card h3 {
+            color: var(--dark);
+            margin: 10px 0;
+        }
+
+        /* =========================
+           LANGUES / INTERETS
+        ========================= */
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .interest-list {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .interest {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            padding: 15px;
+
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .interest-icon {
+            font-size: 1.7rem;
+        }
+
+        /* =========================
+           ALTERNANCE
+        ========================= */
+
+        .alternance {
+            background: linear-gradient(
+                135deg,
+                #172033,
+                #26385f
+            );
+
+            color: white;
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+
+            box-shadow: 0 25px 60px rgba(23,32,51,0.2);
+        }
+
+        .alternance h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .alternance p {
+            max-width: 750px;
+            margin: auto auto 30px;
+            color: #dbeafe;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--dark);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .photo-container {
+                order: -1;
+            }
+
+            .skills-grid,
+            .education-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-grid,
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3.3rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .photo-frame {
+                width: 270px;
+                height: 320px;
+            }
+
+            .skills-grid,
+            .education-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .alternance {
+                padding: 35px 20px;
+            }
+
+            .alternance h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="nav-container">
+
+        <a href="#accueil" class="logo">
+            <span>P</span>N
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#accueil">Accueil</a>
+            </li>
+
+            <li>
+                <a href="#apropos">À propos</a>
+            </li>
+
+            <li>
+                <a href="#competences">Compétences</a>
+            </li>
+
+            <li>
+                <a href="#experiences">Expériences</a>
+            </li>
+
+            <li>
+                <a href="#formation">Formation</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     ACCUEIL
+========================= -->
+
+<section class="hero" id="accueil">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+
+            <div class="hero-text">
+
+                <div class="hello">
+                    Bonjour, je suis
+                </div>
+
+                <!-- REMPLACE TON NOM ICI -->
+
+                <h1>
+                    Thiapato <span>Thioye</span>
+                </h1>
+
+                <h2>
+                    Étudiante en Sciences des Données
+                </h2>
+
+                <p>
+                    Passionnée par les données, les statistiques et
+                    l'analyse, je souhaite développer mes compétences
+                    dans le domaine de la Data et mettre mes connaissances
+                    au service de projets concrets.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#experiences"
+                       class="btn btn-primary">
+                        Découvrir mon parcours
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-secondary">
+                        Me contacter
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PHOTO
+            ========================= -->
+
+            <div class="photo-container">
+
+                <div class="photo-frame">
+
+                    <!--
+                    IMPORTANT :
+
+                    Mets ta photo dans le même dossier que index.html
+                    et appelle-la :
+
+                    photo.jpg
+
+                    -->
+
+                    <img
+                        src="photo.jpg"
+                        alt="Photo de Thiapato Thioye"
+                        class="photo"
+                    >
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     À PROPOS
+========================= -->
+
+<section id="apropos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>À propos</small>
+
+            <h2>Qui suis-je ?</h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="card">
+
+                <h3>Mon profil</h3>
+
+                <p>
+                    Étudiante en Sciences des Données, je m'intéresse
+                    particulièrement à l'analyse statistique, la
+                    visualisation des données et l'aide à la décision.
+                </p>
+
+                <br>
+
+                <p>
+                    Ma formation m'a permis de développer des compétences
+                    en programmation, statistiques, gestion de données
+                    et outils de Business Intelligence.
+                </p>
+
+                <br>
+
+                <p>
+                    Je recherche actuellement une alternance de deux ans
+                    afin de mettre mes compétences en pratique et de
+                    participer à des projets professionnels concrets.
+                </p>
+
+            </div>
+
+
+            <div class="card profile-highlight">
+
+                <div class="highlight-number">
+                    Data
+                </div>
+
+                <h3>
+                    Sciences des Données
+                </h3>
+
+                <p>
+                    Collecte, nettoyage, analyse, visualisation,
+                    interprétation et modélisation des données.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">R</span>
+                    <span class="tag">Power BI</span>
+                    <span class="tag">Excel</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COMPÉTENCES
+========================= -->
+
+<section id="competences">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>Expertise</small>
+
+            <h2>Mes compétences</h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">💻</div>
+
+                <h3>Programmation</h3>
+
+                <p>
+                    Développement et manipulation de données
+                    avec différents langages.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">R</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">📊</div>
+
+                <h3>Data Visualisation</h3>
+
+                <p>
+                    Création de graphiques, tableaux de bord
+                    et représentations visuelles.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Power BI</span>
+                    <span class="tag">Excel</span>
+                    <span class="tag">Graphiques</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">📈</div>
+
+                <h3>Statistiques</h3>
+
+                <p>
+                    Analyse statistique descriptive et
+                    inférentielle.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Statistiques</span>
+                    <span class="tag">R</span>
+                    <span class="tag">Analyse</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🧹</div>
+
+                <h3>Préparation des données</h3>
+
+                <p>
+                    Collecte, nettoyage et préparation de
+                    jeux de données brutes.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Nettoyage</span>
+                    <span class="tag">Préparation</span>
+                    <span class="tag">Qualité</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">📐</div>
+
+                <h3>Analyse & Modélisation</h3>
+
+                <p>
+                    Interprétation des résultats et
+                    modélisation des données.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Analyse</span>
+                    <span class="tag">Modélisation</span>
+                    <span class="tag">Interprétation</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">⚙️</div>
+
+                <h3>Bureautique avancée</h3>
+
+                <p>
+                    Utilisation avancée des outils bureautiques
+                    et automatisation.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Excel avancé</span>
+                    <span class="tag">VBA</span>
+                    <span class="tag">Access</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPÉRIENCES
+========================= -->
+
+<section id="experiences">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>Parcours professionnel</small>
+
+            <h2>Mes expériences</h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <!-- EXPÉRIENCE 1 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <div class="date">
+                        Septembre 2025 – Juin 2026
+                    </div>
+
+                    <h3>
+                        Chargée d'étude de marché
+                    </h3>
+
+                    <div class="company">
+                        WGDCP – Weekend Gourmand Du Chat Perché
+                    </div>
+
+                    <p>
+                        Conception et administration de questionnaires
+                        auprès des visiteurs afin de recueillir leurs
+                        avis sur l'organisation de l'événement.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Analyse des données recueillies et rédaction
+                        d'un rapport détaillé présentant les principaux
+                        résultats ainsi que des recommandations.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPÉRIENCE 2 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <div class="date">
+                        Décembre 2025 – Janvier 2026
+                    </div>
+
+                    <h3>
+                        Chargée d'étude du marché cosmétique
+                    </h3>
+
+                    <div class="company">
+                        Bourgogne-Franche-Comté
+                    </div>
+
+                    <p>
+                        Réalisation d'une étude de marché pour une
+                        entreprise américaine souhaitant envisager
+                        un déploiement national.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Analyse de la concurrence, des canaux de
+                        distribution et des données issues d'enquêtes
+                        terrain.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Évaluation du potentiel de la région
+                        Bourgogne-Franche-Comté comme marché test.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPÉRIENCE 3 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card">
+
+                    <div class="date">
+                        Octobre – Novembre 2025
+                    </div>
+
+                    <h3>
+                        Analyse documentaire et statistique
+                    </h3>
+
+                    <div class="company">
+                        Projet académique
+                    </div>
+
+                    <p>
+                        Analyse et synthèse d'un article de l'INSEE.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Interprétation des données statistiques afin
+                        de répondre au besoin du commanditaire.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FORMATION
+========================= -->
+
+<section id="formation">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>Parcours académique</small>
+
+            <h2>Ma formation</h2>
+
+        </div>
+
+
+        <div class="education-grid">
+
+
+            <div class="education-card">
+
+                <div class="education-year">
+                    2026 – 2027
+                </div>
+
+                <h3>
+                    BUT Sciences des Données
+                </h3>
+
+                <p>
+                    Université Marie et Louis Pasteur
+                </p>
+
+                <p>
+                    Dole, France
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <div class="education-year">
+                    2024 – 2025
+                </div>
+
+                <h3>
+                    Licence 1 – Énergies renouvelables
+                </h3>
+
+                <p>
+                    Université Cheikh Anta Diop de Dakar
+                </p>
+
+                <p>
+                    Sénégal
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <div class="education-year">
+                    Formation initiale
+                </div>
+
+                <h3>
+                    Baccalauréat scientifique
+                </h3>
+
+                <p>
+                    Baccalauréat scientifique sénégalais
+                </p>
+
+                <p>
+                    Mention Bien
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LANGUES & CENTRES D'INTÉRÊT
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>En dehors de la Data</small>
+
+            <h2>Langues & centres d'intérêt</h2>
+
+        </div>
+
+
+        <div class="two-columns">
+
+
+            <!-- LANGUES -->
+
+            <div class="card">
+
+                <h3>🌍 Langues</h3>
+
+                <div class="interest-list">
+
+                    <div class="interest">
+
+                        <div class="interest-icon">
+                            🇫🇷
+                        </div>
+
+                        <div>
+                            <strong>Français</strong>
+                            <p>Courant</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="interest">
+
+                        <div class="interest-icon">
+                            🇬🇧
+                        </div>
+
+                        <div>
+                            <strong>Anglais</strong>
+                            <p>Niveau intermédiaire</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CENTRES D'INTÉRÊT -->
+
+            <div class="card">
+
+                <h3>✨ Centres d'intérêt</h3>
+
+                <div class="interest-list">
+
+
+                    <div class="interest">
+
+                        <div class="interest-icon">
+                            🏃‍♀️
+                        </div>
+
+                        <div>
+                            <strong>Course à pied</strong>
+                            <p>Sport</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="interest">
+
+                        <div class="interest-icon">
+                            🍳
+                        </div>
+
+                        <div>
+                            <strong>Cuisine</strong>
+                            <p>Pratique régulière</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="interest">
+
+                        <div class="interest-icon">
+                            📚
+                        </div>
+
+                        <div>
+                            <strong>Lecture</strong>
+                            <p>Littérature & romance</p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ALTERNANCE
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="alternance">
+
+            <h2>
+                À la recherche d'une alternance
+            </h2>
+
+            <p>
+                Je recherche une alternance de deux ans dans le domaine
+                de la Data, des statistiques, de l'analyse de données
+                ou de la Business Intelligence.
+            </p>
+
+            <a href="#contact"
+               class="btn btn-primary">
+
+                Me contacter
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>Contact</small>
+
+            <h2>Échangeons ensemble</h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📧
+                </div>
+
+                <h3>Email</h3>
+
+                <!-- REMPLACE PAR TON EMAIL -->
+
+                <p>
+                    tthiapato@gmail.com
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    💼
+                </div>
+
+                <h3>Téléphone</h3>
+
+                <!-- REMPLACE PAR TON LIEN LINKEDIN -->
+
+                <p>
+                    07 58 38 30 25
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    💻
+                </div>
+
+                <h3>GitHub</h3>
+
+                <!-- REMPLACE PAR TON LIEN GITHUB -->
+
+                <p>
+                    tthiapato-dotcom
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>Thiapato Thioye</strong> —
+        Portfolio Sciences des Données
+    </p>
+
+</footer>
+
+
+</body>
+</html>
